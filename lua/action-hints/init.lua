@@ -40,7 +40,7 @@ local function debounce(func, delay)
 end
 
 M.supports_method = function(method)
-  local clients = vim.lsp.buf_get_clients()
+  local clients = vim.lsp.get_clients()
   for _, client in pairs(clients) do
     if client.server_capabilities[method] then
       return true
